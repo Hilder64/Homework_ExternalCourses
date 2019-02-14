@@ -21,12 +21,25 @@ public class Controler {
         view.printMessage(View.GAME_RULES);
         view.printMessage(View.GAME_START);
         while (!model.isNumberCoincide()) {
-            view.printMessage(model.checkNumber(inputNumberWithScannerAndDiapason(scanner)));
+            view.printMessage(getResultCompare(model.checkNumber(inputNumberWithScannerAndDiapason(scanner))));
             attempsCounter++;
         }
         stopWatch.stop();
         view.printMessage(View.NUMBER_OF_ATTEMPTS + attempsCounter);
-        view.printMessage(View.TIME_SPENT + Math.floor(stopWatch.getElapsedTime().toMillis()/1000.));
+        view.printMessage(View.TIME_SPENT + Math.floor(stopWatch.getElapsedTime().toMillis() / 1000.));
+    }
+
+    private String getResultCompare(InputValueState state) {
+        switch (state) {
+            case MORE:
+                return View.ENTERED_NUMBER_MORE;
+            case LESS:
+                return View.ENTERED_NUMBER_LESS;
+            case COINSIDE:
+                return View.ENTERED_NUMBER_COINCIDE;
+            default:
+                throw new RuntimeException();
+        }
     }
 
     private int inputNumberWithScannerAndDiapason(Scanner scanner) {
