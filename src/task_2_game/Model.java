@@ -47,10 +47,10 @@ public class Model {
 
     public String checkNumber(int inputNumber) {
         if (SECRET_NUMBER < inputNumber) {
-            maxOfRange = inputNumber - 1;
+            maxOfRange = inputNumber;
             return View.ENTERED_NUMBER_MORE;
         } else if (SECRET_NUMBER > inputNumber) {
-            minOfRange = inputNumber + 1;
+            minOfRange = inputNumber;
             return View.ENTERED_NUMBER_LESS;
         } else {
 //            stopWatch.stop();
