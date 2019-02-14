@@ -7,17 +7,12 @@ public class Model {
     private static int RAND_MAX = 100;
     private int minOfRange;
     private int maxOfRange;
-//    private int attempsCounter;
-//    private StopWatch stopWatch;
     private boolean numberCoincide;
 
     public Model() {
         SECRET_NUMBER = rand();
         minOfRange = 0;
         maxOfRange = 100;
-        /*attempsCounter = 0;
-        stopWatch = new StopWatch();
-        stopWatch.start();*/
         numberCoincide = false;
     }
 
@@ -53,9 +48,8 @@ public class Model {
             minOfRange = inputNumber;
             return InputValueState.MORE;
         } else {
-//            stopWatch.stop();
             numberCoincide = true;
-            return InputValueState.COINSIDE;
+            return InputValueState.COINCIDE;
         }
     }
 

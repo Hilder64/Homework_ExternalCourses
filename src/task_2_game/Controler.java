@@ -35,7 +35,7 @@ public class Controler {
                 return View.ENTERED_NUMBER_MORE;
             case LESS:
                 return View.ENTERED_NUMBER_LESS;
-            case COINSIDE:
+            case COINCIDE:
                 return View.ENTERED_NUMBER_COINCIDE;
             default:
                 throw new RuntimeException();
