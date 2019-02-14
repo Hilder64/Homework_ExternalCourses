@@ -45,17 +45,17 @@ public class Model {
         return rand(0, RAND_MAX);
     }
 
-    public String checkNumber(int inputNumber) {
+    public InputValueState checkNumber(int inputNumber) {
         if (SECRET_NUMBER < inputNumber) {
             maxOfRange = inputNumber;
-            return View.ENTERED_NUMBER_MORE;
+            return InputValueState.MORE;
         } else if (SECRET_NUMBER > inputNumber) {
             minOfRange = inputNumber;
-            return View.ENTERED_NUMBER_LESS;
+            return InputValueState.MORE;
         } else {
 //            stopWatch.stop();
             numberCoincide = true;
-            return View.ENTERED_NUMBER_COINCIDE;
+            return InputValueState.COINSIDE;
         }
     }
 
