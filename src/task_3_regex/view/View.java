@@ -1,6 +1,6 @@
 package task_3_regex.view;
 
-public class UtilityView {
+public class View {
     public void printMessage(String message) {
         System.out.println(message);
     }
