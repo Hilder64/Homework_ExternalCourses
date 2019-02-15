@@ -12,4 +12,13 @@ public class View {
         }
         return new String(concatString);
     }
+
+    public void printWrongStringInput(String messageType) {
+        printMessage(concatenationString(TextConstants.WRONG_INPUT_DATA,
+                TextConstants.INPUT_STRING, messageType));
+    }
+
+    public void printRequestMessage(String messageType) {
+        printMessage(concatenationString(TextConstants.INPUT_STRING, messageType));
+    }
 }
