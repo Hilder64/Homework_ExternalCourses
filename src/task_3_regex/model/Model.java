@@ -4,23 +4,20 @@ import task_3_regex.model.entity.Group;
 import task_3_regex.model.entity.NotebookEntry;
 
 public class Model {
-    public NotebookEntry createEntry(String fullName,
-                                     String nickName,
-                                     String comment,
-                                     Group group,
-                                     String homePhone,
-                                     String mobilePhone,
-                                     String mobilePhoneAdditional,
-                                     String eMail,
+    NotebookEntry entry;
+
+    public NotebookEntry createEntry(String fullName, String nickName,
+                                     String comment, String group,
+                                     String homePhone, String mobilePhone,
+                                     String mobilePhoneAdditional, String eMail,
                                      String skype, String address,
-                                     String dateOfEntry,
-                                     String dateOfLastChangeEntry) {
-        return new NotebookEntry(fullName, nickName, comment, group, homePhone,
+                                     String dateOfEntry, String dateOfLastChangeEntry) {
+        return entry = new NotebookEntry(fullName, nickName, comment, Group.getGroup(group), homePhone,
                 mobilePhone, mobilePhoneAdditional, eMail, skype, address,
                 dateOfEntry, dateOfLastChangeEntry);
     }
 
-    public String getEntry(NotebookEntry entry) {
+    public String getEntry() {
         return entry.toString();
     }
 }
